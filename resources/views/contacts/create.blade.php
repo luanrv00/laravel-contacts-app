@@ -1,6 +1,8 @@
 @extends("layouts.base")
 
 @section("content")
+@include("layouts.back")
+
 <div class="box">
     @if ($errors->any())
     <div class="mb-6">

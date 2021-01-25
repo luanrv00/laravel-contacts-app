@@ -1,6 +1,8 @@
 @extends("layouts.base")
 
 @section("content")
+@include("layouts.back")
+
 @if (count($contacts) > 0)
 <div class="table-container">
     <table class="table is-hoverable is-narrow">
