@@ -16,4 +16,13 @@ class WelcomeTest extends DuskTestCase
                     ->assertRouteIs('contacts.create');
         });
     }
+
+    public function test_welcome_page_has_a_link_to_contacts_list()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                    ->clickLink('Ver lista de contatos')
+                    ->assertRouteIs('contacts.index');
+        });
+    }
 }
