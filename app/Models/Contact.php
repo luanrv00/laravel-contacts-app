@@ -11,6 +11,14 @@ class Contact extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'phone',
+        'email',
+        'photo'
+    ];
+
     public function address()
     {
         return $this->belongsTo(Address::class);

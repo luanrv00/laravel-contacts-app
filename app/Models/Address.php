@@ -11,6 +11,15 @@ class Address extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'country',
+        'state',
+        'city',
+        'street',
+        'number',
+        'additional_info'
+    ];
+
     public function contacts()
     {
         return $this->hasMany(Contact::class);
