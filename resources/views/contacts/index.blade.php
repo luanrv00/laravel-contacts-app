@@ -17,6 +17,7 @@
                 <th>Cidade</th>
                 <th>Av./Rua</th>
                 <th>Nº</th>
+                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,11 @@
                 <td class="table-column">{{$contact->address->city}}</td>
                 <td class="table-column">{{$contact->address->street}}</td>
                 <td class="table-column">{{$contact->address->number}}</td>
+                <td class="table-column">
+                    <a class="edit" href="{{route('contacts.edit', ['contact' => $contact])}}">
+                        <span class="icon"><i class="fa fa-pencil"></i></span>
+                    </a>
+                </td>
             </tr>
             @endforeach
         </tbody>

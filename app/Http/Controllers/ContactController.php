@@ -56,4 +56,46 @@ class ContactController extends Controller
 
         return redirect(route('contacts.index'));
     }
+
+    public function edit(Contact $contact)
+    {
+        return view('contacts.edit', ['contact' => $contact]);
+    }
+
+    public function update(Contact $contact, Request $req)
+    {
+        $req->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => ['required','email']
+        ]);
+
+        $address = Address::find($contact->address->id);
+        $address->fill([
+            'country' => $req->country,
+            'state' => $req->state,
+            'city' => $req->city,
+            'street' => $req->street,
+            'number' => $req->number,
+            'additional_info' => $req->additional_info
+        ]);
+
+        $contact->fill([
+            'first_name' => $req->first_name,
+            'last_name' => $req->last_name,
+            'phone' => $req->phone,
+            'email' => $req->email
+        ]);
+
+        if ($req->photo) {
+            $file = $req->photo->store('public');
+            $path = Storage::url($file);
+            $contact->photo = $path;
+        }
+
+        $address->save();
+        $contact->save();
+
+        return redirect(route('contacts.index'));
+    }
 }
