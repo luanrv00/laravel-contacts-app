@@ -98,4 +98,13 @@ class ContactController extends Controller
 
         return redirect(route('contacts.index'));
     }
+
+    public function destroy(Contact $contact)
+    {
+        $person = Contact::find($contact->id);
+        $person->address()->dissociate();
+        $person->delete();
+
+        return redirect()->route('contacts.index');
+    }
 }

@@ -18,6 +18,7 @@
                 <th>Av./Rua</th>
                 <th>Nº</th>
                 <th>&nbsp;</th>
+                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody>
@@ -42,6 +43,18 @@
                     <a class="edit" href="{{route('contacts.edit', ['contact' => $contact])}}">
                         <span class="icon"><i class="fa fa-pencil"></i></span>
                     </a>
+                </td>
+                <td class="table-column">
+                    <form method="post" action="{{route('contacts.destroy', ['contact' => $contact])}}">
+                        @csrf
+                        @method("delete")
+                        <button
+                            class="remove button is-white has-text-info"
+                            type="submit"
+                            onclick="return confirm('Remover contato?')">
+                            <span class="icon"><i class="fa fa-trash"></i></span>
+                        </button>
+                    </form>
                 </td>
             </tr>
             @endforeach
