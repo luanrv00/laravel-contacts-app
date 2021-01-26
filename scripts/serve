@@ -1,0 +1,18 @@
+#!/bin/env sh
+
+if [ $# -eq 0 ]; then
+    composer install
+    php artisan migrate
+    php artisan serve
+    exit 1
+elif [ $1 = "docker" ]; then
+    composer install
+    php artisan sail:install
+    ./vendor/bin/sail up -d
+    ./vendor/bin/sail php artisan migrate
+    ./vendor/bin/sail php artisan storage:link
+    echo "\nServer running at http://localhost"
+    exit 1
+elif [ $1 = "stop" ]; then
+    ./vendor/bin/sail down
+fi

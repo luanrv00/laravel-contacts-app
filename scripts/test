@@ -1,0 +1,3 @@
+#!/bin/env sh
+
+./scripts/serve & sleep 11 && php artisan dusk
