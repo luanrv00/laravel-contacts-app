@@ -61,6 +61,13 @@
         </tbody>
     </table>
 </div>
+
+<hr class="mt-6">
+
+<div>
+    {{$contacts->links('layouts.pagination')}}
+</div>
+
 <div class="mt-6">
     <a class="button is-primary is-light" href="{{route('contacts.create')}}">
         Adicionar novo contato
