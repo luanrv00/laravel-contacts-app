@@ -67,6 +67,19 @@ Verifique se a variável de ambiente `DB_HOST` está setada para `127.0.0.1` ou
 
 Se tiver um servidor MySQL ou Apache executando em sua máquina é possível que você precise pausa-los antes de iniciar o Docker, pois as mesmas portas são utilizadas. 
 
+**`Falha no carregamento das fotos`**
+
+Pode ser que o link esteja apontando para o caminho errado. Para fixar isso siga
+os seguintes passos:
+
+```sh
+# remova o link atual
+rm public/storage
+
+# gere um novo link
+php artisan storage:link
+```
+
 [laravel]: https://laravel.com/
 [bulma]: https://bulma.io/
 [sail]: https://laravel.com/docs/8.x/sail

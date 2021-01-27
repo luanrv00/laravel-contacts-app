@@ -27,7 +27,7 @@
                 <td class="table-column">
                     <figure class="image is-64x64">
                         @if ($contact->photo)
-                        <img class="is-rounded" src="{{$contact->photo}}">
+                        <img class="photo" src="{{$contact->photo}}">
                         @endif
                     </figure>
                 </td>
