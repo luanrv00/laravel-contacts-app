@@ -20,8 +20,10 @@ DB_PASSWORD=<senha-de-sua-escolha>
 
 E então executar o seguinte comando no terminal:
 
+**Obs.:** Tenha certeza de ter o [composer][composer] instalado.
+
 ```sh
-./scripts/serve
+sh ./scripts/serve
 ```
 
 A aplicação deverá estar disponível em [http://localhost:8000](http://localhost:8000)
@@ -33,7 +35,7 @@ Para iniciar um ambiente com Docker foi utilizado o pacote [Sail][sail] do Larav
 Basta passar `docker` como argumento para o script `serve`:
 
 ```sh
-./scripts/serve docker
+sh ./scripts/serve docker
 ```
 
 Após isso, a aplicação deverá estar disponível em [http://localhost](http://localhost)
@@ -41,7 +43,7 @@ Após isso, a aplicação deverá estar disponível em [http://localhost](http:/
 **Obs.:** Após o desenvolvimento é necessário parar o servidor quer estará sendo executado em background.  Para isso, execute o seguinte comando no terminal:
 
 ```sh
-./scripts/serve stop
+sh ./scripts/serve stop
 ```
 
 ## Testes
@@ -51,7 +53,7 @@ Todos os testes funcionais foram escritos utilizando o pacote [Dusk][dusk] do La
 Para rodar os testes, execute no terminal:
 
 ```sh
-./scripts/test
+sh ./scripts/test
 ```
 
 ## Troubleshooting
@@ -70,3 +72,4 @@ Se tiver um servidor MySQL ou Apache executando em sua máquina é possível que
 [sail]: https://laravel.com/docs/8.x/sail
 [dusk]: https://laravel.com/docs/8.x/dusk
 [mysql]: https://www.mysql.com/
+[composer]: https://getcomposer.org/
