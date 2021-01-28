@@ -10,9 +10,10 @@ Aplicação desenvolvida utilizando [Laravel 8][laravel], [MySQL][mysql], [Bulma
 
 Para isso, basta criar tabela e usuário no seu MySQL local e em seguida configurar esses dados no arquivo `.env`:
 
-```sh
-# Outros dados de configuração..
+_Faça uma cópia do arquivo `.env.example`_
 
+```sh
+# Outros dados de configuração...
 DB_DATABASE=<database-de-sua-escolha>
 DB_USERNAME=<usuário-de-sua-escolha>
 DB_PASSWORD=<senha-de-sua-escolha>
@@ -49,6 +50,8 @@ sh ./scripts/serve stop
 ## Testes
 
 Todos os testes funcionais foram escritos utilizando o pacote [Dusk][dusk] do Laravel.
+
+**Obs.: Antes de executar os testes é necessário iniciar o servidor.**
 
 Para rodar os testes, execute no terminal:
 

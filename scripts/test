@@ -1,3 +1,13 @@
 #!/bin/env sh
 
-./scripts/serve & sleep 11 && php artisan dusk
+composer install
+php artisan dusk:install
+if [ -f tests/Browser/ExampleTest.php ]; then
+  rm tests/Browser/ExampleTest.php
+fi
+if [ -f public/avatar.jpg ]; then
+  cp public/avatar.jpg storage/app/public
+fi
+php artisan dusk
+
+exit 1
